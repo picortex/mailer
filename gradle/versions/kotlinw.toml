@@ -1,0 +1,5 @@
+[versions]
+css = { strictly = "1.0.0-pre.289-kotlin-1.6.10" }
+
+[libraries]
+css = { module = "org.jetbrains.kotlin-wrappers:kotlin-css", version.ref = "css" }
