@@ -38,8 +38,12 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
 
 rootProject.name = "bitframe"
 
+includeSubs("functions", "../functions", "core")
+includeSubs("expect", "../expect", "core", "coroutines")
+includeSubs("koncurrent-primitives", "../koncurrent/primitives", "core", "coroutines", "mock")
+includeSubs("koncurrent-later", "../koncurrent/later", "core", "coroutines", "test")
 includeSubs("krono", "../krono", "api")
-//includeSubs(base = "presenters", path = "../presenters", "actions", "core", "mock")
+includeSubs("identifier", "../identifier", "core")
 
 // <BitframeUtils>
 includeSubs(base = "mailer", path = ".", "api", "mock", "smtp")
