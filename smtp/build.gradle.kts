@@ -19,7 +19,7 @@ kotlin {
 
         val test by getting {
             dependencies {
-                implementation(asoft.expect.coroutines)
+                implementation(projects.expectCoroutines)
             }
         }
     }

@@ -13,15 +13,16 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(asoft.koncurrent.later.coroutines)
-                api(asoft.identifier.core)
+                api(projects.koncurrentLaterCoroutines)
+                api(projects.identifierCore)
+
                 api(kotlinx.serialization.core)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                api(asoft.expect.coroutines)
+                implementation(projects.expectCoroutines)
             }
         }
     }
