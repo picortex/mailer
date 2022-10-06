@@ -24,3 +24,8 @@ kotlin {
         }
     }
 }
+
+aSoftOSSLibrary(
+    version = asoft.versions.root.get(),
+    description = "A kotlin multiplatform library"
+)
