@@ -36,7 +36,7 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
     }
 }
 
-rootProject.name = "bitframe"
+rootProject.name = "asoft"
 
 includeSubs("functions", "../functions", "core")
 includeSubs("expect", "../expect", "core", "coroutines")
