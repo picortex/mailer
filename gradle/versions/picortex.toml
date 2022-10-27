@@ -5,6 +5,7 @@ bitframe = "0.10.55"
 server-ip = "65.21.254.230"
 server-user = "root"
 server-password = "bitframe"
+tmp = "1"
 
 [libraries]
 authenticator-api-core = { module = "com.picortex:authenticator-api-core", version.ref = "authenticator" }
