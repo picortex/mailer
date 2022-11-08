@@ -3,6 +3,7 @@ package mailer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlin.jvm.JvmField
+import kotlin.jvm.JvmName
 import kotlin.jvm.JvmOverloads
 import kotlin.jvm.JvmStatic
 import kotlin.jvm.JvmSynthetic
@@ -46,7 +47,9 @@ interface MockMailerConfig {
         @JvmField
         val DEFAULT_PADDING_WIDTH = " "
 
-        @JvmSynthetic
+        @JvmOverloads
+        @JvmStatic
+        @JvmName("create")
         operator fun invoke(
             printToConsole: Boolean = DEFAULT_PRINT_TO_CONSOLE,
             simulationTime: Long = DEFAULT_SIMULATION_TIME,
@@ -66,18 +69,5 @@ interface MockMailerConfig {
             override val paddingWidth = paddingWidth
             override val scope: CoroutineScope = scope
         }
-
-        @JvmOverloads
-        @JvmStatic
-        fun create(
-            printToConsole: Boolean = DEFAULT_PRINT_TO_CONSOLE,
-            simulationTime: Long = DEFAULT_SIMULATION_TIME,
-            separator: String = DEFAULT_SEPERATOR,
-            charsPerLine: Int = DEFAULT_CHARS_PER_LINE,
-            marginWidth: String = DEFAULT_MARGIN_WIDTH,
-            border: String = DEFAULT_BORDER,
-            paddingWidth: String = DEFAULT_PADDING_WIDTH,
-            scope: CoroutineScope = DEFAULT_SCOPE
-        ) = invoke(printToConsole, simulationTime, separator, charsPerLine, marginWidth, border, paddingWidth, scope)
     }
 }

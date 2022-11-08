@@ -12,7 +12,7 @@ class MailerMockTest {
         simulationTime = 1000L,
         separator = "="
     )
-    val mailer: Mailer = MockMailer(config)
+    val mailer = MockMailer(config)
 
     @Test
     fun should_easily_send_an_email() = runTest {
@@ -63,6 +63,29 @@ class MailerMockTest {
                 email = "test@console.com"
             )
         ).await()
+    }
+
+    @Test
+    fun should_find_sent_email_in_the_outbox() = runTest {
+        val cfg = MockMailerConfig(charsPerLine = 55)
+        val m = MockMailer(cfg)
+        val draft = EmailDraft(
+            subject = "Look good while doing it",
+            body = "When you decide to do something, make sure you do it well and make sure you look good doing it\n" +
+                    "It not only makes thr whole thing wow, but even people watching you do enjoy"
+        )
+        m.send(
+            draft,
+            from = AddressInfo(
+                name = "Dope Developer",
+                email = "anderson@developer.com"
+            ), to = AddressInfo(
+                name = "Console",
+                email = "test@console.com"
+            )
+        ).await()
+
+        expect(m.outbox["test@console.com"]).toContainElements()
     }
 
     @Test
