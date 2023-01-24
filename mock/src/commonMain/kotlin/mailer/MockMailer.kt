@@ -2,7 +2,7 @@ package mailer
 
 import koncurrent.Later
 import koncurrent.later
-import kotlinx.collections.interoperable.List
+import kollections.List
 import kotlinx.coroutines.delay
 import kotlin.math.max
 

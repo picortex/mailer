@@ -1,11 +1,15 @@
 package mailer
 
+import kollections.List
 import koncurrent.Later
 import koncurrent.later
-import kotlinx.collections.interoperable.List
 import javax.activation.DataHandler
 import javax.activation.FileDataSource
-import javax.mail.*
+import javax.mail.Authenticator
+import javax.mail.Message
+import javax.mail.PasswordAuthentication
+import javax.mail.Session
+import javax.mail.Transport
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeBodyPart
 import javax.mail.internet.MimeMessage

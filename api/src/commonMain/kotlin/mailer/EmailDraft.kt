@@ -3,14 +3,14 @@
 
 package mailer
 
-import kotlinx.collections.interoperable.List
-import kotlinx.collections.interoperable.listOf
+import kollections.List
+import kollections.iListOf
 import kotlin.js.JsExport
 
 data class EmailDraft(
     val subject: String,
     val body: String,
-    val attachments: List<EmailAttachment<*>> = listOf()
+    val attachments: List<EmailAttachment<Any?>> = iListOf()
 ) {
     fun toMessage(
         from: AddressInfo,
@@ -21,6 +21,6 @@ data class EmailDraft(
         to = to,
         body = body,
         attachments = attachments,
-        status = listOf()
+        status = iListOf()
     )
 }

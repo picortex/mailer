@@ -1,10 +1,13 @@
 import expect.expect
 import identifier.Email
-import kotlinx.collections.interoperable.listOf
-import kotlinx.coroutines.test.runTest
+import kollections.iListOf
 import koncurrent.later.await
-import mailer.*
-import kotlin.test.Ignore
+import kotlinx.coroutines.test.runTest
+import mailer.AddressInfo
+import mailer.EmailDraft
+import mailer.MockAttachment
+import mailer.MockMailer
+import mailer.MockMailerConfig
 import kotlin.test.Test
 
 class MailerMockTest {
@@ -33,7 +36,7 @@ class MailerMockTest {
             draft = EmailDraft(
                 subject = "Test Draft",
                 body = "This is a test email",
-                attachments = listOf(
+                attachments = iListOf(
                     MockAttachment(4, "number", "test attachment"),
                     MockAttachment(mailer, "mailer", "Attached the freaking mailer son"),
                 )
@@ -96,7 +99,7 @@ class MailerMockTest {
             subject = "Look good while doing it",
             body = "When you decide to do something, make sure you do it well and make sure you look good doing it\n" +
                     "It not only makes thr whole thing wow, but even people watching you do enjoy",
-            attachments = listOf(
+            attachments = iListOf(
                 MockAttachment(12, "image/jpg", "picture-12.jpg"),
                 MockAttachment(13, "image/jpg", "picture-13.jpg"),
                 MockAttachment(14, "image/jpg", "picture-14.jpg"),
@@ -108,7 +111,7 @@ class MailerMockTest {
                 name = "Dope Developer",
                 email = "anderson@developer.com"
             ),
-            to = listOf(
+            to = iListOf(
                 AddressInfo(
                     name = "Anderson",
                     email = "test@anderson.com"

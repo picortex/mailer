@@ -3,8 +3,8 @@
 
 package mailer
 
-import kotlinx.collections.interoperable.List
-import kotlinx.collections.interoperable.listOf
+import kollections.List
+import kollections.iListOf
 import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
@@ -13,6 +13,6 @@ data class EmailMessage(
     val from: AddressInfo,
     val to: List<AddressInfo>,
     val body: String,
-    val attachments: List<EmailAttachment<*>> = listOf(),
+    val attachments: List<EmailAttachment<Any?>> = iListOf(),
     val status: List<EmailStatus>
 )
