@@ -4,7 +4,6 @@ plugins {
     id("tz.co.asoft.library")
     id("org.jetbrains.dokka")
     signing
-//    id("picortex-publish")
 }
 
 kotlin {
@@ -16,8 +15,7 @@ kotlin {
             dependencies {
                 api(projects.koncurrentLaterCoroutines)
                 api(projects.kollectionsInteroperable)
-                api(projects.identifierCore)
-
+                api(projects.identifierComm)
                 api(kotlinx.serialization.core)
             }
         }
