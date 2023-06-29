@@ -1,8 +1,10 @@
 import kotlin.test.Test
 import expect.expect
+import kommander.expect
+
 class RedanduntTest {
     @Test
     fun should_pass() {
-        expect(1+1).toBe(2)
+        expect<Int>(1 + 1).toBe(2)
     }
 }

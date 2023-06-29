@@ -1,10 +1,12 @@
 import expect.expect
 import identifier.Email
 import kollections.iListOf
+import kommander.expect
 import koncurrent.later.await
 import kotlinx.coroutines.test.runTest
 import mailer.AddressInfo
 import mailer.EmailDraft
+import mailer.EmailMessage
 import mailer.MockAttachment
 import mailer.MockMailer
 import mailer.MockMailerConfig
@@ -27,7 +29,7 @@ class MailerMockTest {
             from = Email("from@test.com"),
             to = Email("to@gmail.com"),
         ).await()
-        expect(message).toBeNonNull()
+        expect<EmailMessage>(message).toBeNonNull()
     }
 
     @Test

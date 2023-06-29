@@ -1,13 +1,12 @@
 @file:OptIn(ExperimentalCoroutinesApi::class)
 
-import expect.expect
 import identifier.Email
-import kotlinx.collections.interoperable.listOf
+import kollections.iListOf
+import kommander.expect
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import koncurrent.later.await
 import mailer.*
-import java.io.InputStream
 import java.util.*
 import kotlin.test.Ignore
 import kotlin.test.Test
@@ -59,7 +58,7 @@ class SmtpMailerTest {
             draft = EmailDraft(
                 subject = "Test Draft",
                 body = "<html><body><b>This is a test email</b>&nbsp;not bold</body></html>",
-                attachments = listOf(
+                attachments = iListOf(
                     ByteArrayAttachment(
                         content = inputStream.readAllBytes(),
                         name = "Vonage_Guide.pdf",
