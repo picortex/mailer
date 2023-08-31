@@ -15,7 +15,7 @@ kotlin {
             dependencies {
                 api(libs.koncurrent.later.coroutines)
                 api(libs.kollections.interoperable)
-                api(projects.identifierComm)
+                api(libs.identifier.comm)
                 api(kotlinx.serialization.core)
             }
         }
