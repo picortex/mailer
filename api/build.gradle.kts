@@ -14,7 +14,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.koncurrentLaterCoroutines)
-                api(projects.kollectionsInteroperable)
+                api(libs.kollections.interoperable)
                 api(projects.identifierComm)
                 api(kotlinx.serialization.core)
             }
