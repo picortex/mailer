@@ -13,7 +13,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.koncurrentLaterCoroutines)
+                api(libs.koncurrent.later.coroutines)
                 api(libs.kollections.interoperable)
                 api(projects.identifierComm)
                 api(kotlinx.serialization.core)
